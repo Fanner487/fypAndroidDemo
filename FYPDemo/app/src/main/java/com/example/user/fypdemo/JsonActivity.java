@@ -51,8 +51,6 @@ public class JsonActivity extends AppCompatActivity {
                                 System.out.println("Organiser: " + organiser);
                                 System.out.println("Scheduled: " + scheduled);
 
-                                String result = "";
-
                                 String event = "\n----------------" +
                                         "\nEvent Name: " + eventName +
                                         "\nCreated: " + created +
@@ -80,7 +78,6 @@ public class JsonActivity extends AppCompatActivity {
                     }
                 }
         );
-
 
         // Add request to Request Queue from singleton
         RequestQueueInstance.getInstance(this).addToRequestQueue(jsonArrayRequest);
