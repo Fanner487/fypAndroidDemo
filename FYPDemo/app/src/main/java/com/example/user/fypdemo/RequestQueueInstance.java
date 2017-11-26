@@ -8,6 +8,9 @@ import com.android.volley.toolbox.Volley;
 
 /**
  * Created by Eamon on 21/11/2017.
+ *
+ * Singleton class to only have one instance of RequestQueue that the other
+ * classes can add to the queue
  */
 
 public class RequestQueueInstance {

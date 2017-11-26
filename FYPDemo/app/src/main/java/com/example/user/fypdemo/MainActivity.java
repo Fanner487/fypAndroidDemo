@@ -9,18 +9,18 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonArrayRequest;
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.MultiFormatWriter;
 import com.google.zxing.WriterException;
 import com.google.zxing.common.BitMatrix;
 import com.journeyapps.barcodescanner.BarcodeEncoder;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
+/**
+ * Created by Eamon on 21/11/2017.
+ *
+ * Houses all of the code to generate a QR code using the XZing library
+ * and an option go to the Activity where JSON can be requested from the server
+ */
 
 public class MainActivity extends AppCompatActivity {
 
@@ -56,13 +56,16 @@ public class MainActivity extends AppCompatActivity {
                     Bitmap bitmap = encoder.createBitmap(bitMatrix);
 
                     image.setImageBitmap(bitmap);
+
                 } catch (WriterException e) {
                     e.printStackTrace();
                 }
             }
         });
 
+        // Goes to JsonActivity screen to request JSON data
         btnGetJson.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), JsonActivity.class);

@@ -13,6 +13,13 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+/**
+ * Created by Eamon on 26/11/2017.
+ *
+ * Sends a request to the Django server
+ * Parses and displays JSON response
+ */
+
 public class JsonActivity extends AppCompatActivity {
 
     TextView tvJsonData;
@@ -63,7 +70,9 @@ public class JsonActivity extends AppCompatActivity {
 
                             }
 
+                            // Display parsed and formatted JSON data on screen
                             tvJsonData.setText(stringBuilder.toString());
+
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
@@ -79,7 +88,7 @@ public class JsonActivity extends AppCompatActivity {
                 }
         );
 
-        // Add request to Request Queue from singleton
+        // Add request to Request Queue from singleton instance
         RequestQueueInstance.getInstance(this).addToRequestQueue(jsonArrayRequest);
 
     }
